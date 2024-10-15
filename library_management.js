@@ -1,17 +1,24 @@
 //Task 1: Create a Book Class
 
 class Book {
-    constructor(title, author, ISBN, _isAvailable) {
+    constructor(title, author, ISBN, _isAvailable = true) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
         this._isAvailable = _isAvailable;
     }
 
-    getDetails()
-}
-
-
+    getDetails() {
+        return `${this.title}, ${this.author}, ${this.ISBN}`;
+    }
+    
+    get isAvailable() {
+        return this._isAvailable;
+    }
+    set isAvailable(x) {
+        this._isAvailable = x;
+    }
+};
 
 //task 6: Create and Manage Sections and Patrons
 
