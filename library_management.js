@@ -55,6 +55,37 @@ class Section {
 
 
 
+//Task 3: Create a Patron Class
+
+class Patron {
+    constructor(name, borrowedBooks) {
+        this.name = name;
+        this.borrowedBooks = borrowedBooks;
+    }
+
+    //need to finshish borrow book method
+    borrowBook(book) {
+        if (book._isAvailable) {
+        }
+    }
+}
+
+
+
+//Task 4: Create a VIPPatron Class that Inherits from PatronLinks to an external site.
+
+class VIPPatron extends Patron {
+    constructor(name, borrowedBooks, priority) {
+        super(name);
+        super(borrowedBooks);
+        this.priority = priority;
+    }
+
+    //borrowBook method overwritten
+}
+
+
+
 //Task 6: Create and Manage Sections and Patrons
 
 // Create sections
