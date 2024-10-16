@@ -12,15 +12,50 @@ class Book {
         return `${this.title}, ${this.author}, ${this.ISBN}`;
     }
     
+    // getter for isAvailable
     get isAvailable() {
         return this._isAvailable;
     }
+    // setter for isAvailable
     set isAvailable(x) {
         this._isAvailable = x;
     }
 };
 
-//task 6: Create and Manage Sections and Patrons
+
+
+//Task 2: Create a Section Class
+
+class Section {
+    constructor(name, books) {
+        this.name = name;
+        this.books = books;
+    }
+
+    // using push to add a book to the books array
+    addBook(book) {
+        this.books.push(book);
+    }
+
+    //using filter and length to calculate total number of books in section
+    getAvailableBooks() {
+        return this.books.filter((book) => {
+            book.books.length;
+        })
+    }
+
+    //listing all book objects in the section
+    listBooks() {
+        console.log(`The books in this section are ${this.name}:`);
+        this.books.forEach((book) => {
+            console.log(book);
+        })
+    }
+}
+
+
+
+//Task 6: Create and Manage Sections and Patrons
 
 // Create sections
 const fiction = new Section("Fiction");
