@@ -51,6 +51,15 @@ class Section {
             console.log(book);
         })
     }
+
+
+
+//Task 5: Handle Books Borrowing and Returning
+
+calculateTotalBooksAvailable() {
+
+}
+
 }
 
 
@@ -60,12 +69,30 @@ class Section {
 class Patron {
     constructor(name, borrowedBooks) {
         this.name = name;
-        this.borrowedBooks = borrowedBooks;
+        //setting borrowedBooks to an empty array
+        this.borrowedBooks = [];
     }
 
-    //need to finshish borrow book method
     borrowBook(book) {
-        if (book._isAvailable) {
+        if (book.isAvailable) {
+            //Add book to pratons array
+            this.borrowedBooks.push(book)
+            //Update book status to borrowed
+            book.isAvailable = false
+        }
+    }
+
+    returnBook(book) {
+        //check if book is borrowed
+        if (book.isAvailable = false) {
+            //set varibable found
+            found = this.borrowedBooks.find((bb) => (bb.ISBN == book.ISBN));
+            //update book to available if found
+            if (found) {
+                book.isAvailable = true
+                //Remove book from patrons array if found
+                this.borrowedBooks.filter((bb => bb.ISBN == book.ISBN));
+            }
         }
     }
 }
