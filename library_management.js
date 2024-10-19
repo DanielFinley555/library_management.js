@@ -27,7 +27,8 @@ class Book {
 //Task 2: Create a Section Class
 
 class Section {
-    constructor(name, books) {
+    //make books an array
+    constructor(name, books = []) {
         this.name = name;
         this.books = books;
     }
@@ -37,10 +38,10 @@ class Section {
         this.books.push(book);
     }
 
-    //using filter and length to calculate total number of books in section
+    //using filter to calculate total number of books in section
     getAvailableBooks() {
         return this.books.filter((book) => {
-            book.books.length;
+            book.isAvailable;
         })
     }
 
@@ -57,7 +58,6 @@ class Section {
 //Task 5: Handle Books Borrowing and Returning
 
 calculateTotalBooksAvailable() {
-
 }
 
 }
@@ -67,10 +67,10 @@ calculateTotalBooksAvailable() {
 //Task 3: Create a Patron Class
 
 class Patron {
-    constructor(name, borrowedBooks) {
+    //setting borrowedBooks to an empty array
+    constructor(name, borrowedBooks = []) {
         this.name = name;
-        //setting borrowedBooks to an empty array
-        this.borrowedBooks = [];
+        this.borrowedBooks = borrowedBooks;
     }
 
     borrowBook(book) {
@@ -86,7 +86,7 @@ class Patron {
         //check if book is borrowed
         if (book.isAvailable = false) {
             //set varibable found
-            found = this.borrowedBooks.find((bb) => (bb.ISBN == book.ISBN));
+            const found = this.borrowedBooks.find((bb) => (bb.ISBN == book.ISBN));
             //update book to available if found
             if (found) {
                 book.isAvailable = true
@@ -103,12 +103,14 @@ class Patron {
 
 class VIPPatron extends Patron {
     constructor(name, borrowedBooks, priority) {
-        super(name);
-        super(borrowedBooks);
+        super(name, borrowedBooks);
         this.priority = priority;
     }
 
     //borrowBook method overwritten
+    borrowBook(book) {
+        
+    }
 }
 
 
